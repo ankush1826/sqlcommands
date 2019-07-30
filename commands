@@ -1,0 +1,12 @@
+ // if u get india , pakistan name first then showing listing
+SELECT * FROM `country` order by `country_name` IN ( 'india' , 'pakistan') desc, `country_id` asc
+
+
+
+ //swaping two coloumn
+UPDATE country SET `country_name`=@tmp:=country_name, `country_name`=`address`, `address`=@tmp
+
+
+
+ // autoincrement value if autoincrement break like 1,2,3,4,8,15,
+SET @num := 0; UPDATE users SET id = @num := (@num+1); ALTER TABLE users AUTO_INCREMENT =1;
